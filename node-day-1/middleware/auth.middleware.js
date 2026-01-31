@@ -2,17 +2,20 @@ const myMiddleWare = (req, res, next) => {
     const secret = req.body.secret;
 
     if(secret === undefined){
-        res.json({error: 'Secret is missing'});
+        const err = new Error('Forbidden');
+        err.status = 403;
+        next(err);
         return;
     }
 
     if(secret !== 'node') {
-        res.json({error: 'Access denied'});
+        const err = new Error('Unauthorized');
+        err.status = 401;
+        next(err);
         return;
     }
 
-
-     next();
+    next();
 }
 
 module.exports = myMiddleWare;

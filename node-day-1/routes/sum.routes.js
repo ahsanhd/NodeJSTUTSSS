@@ -4,19 +4,30 @@ const myMiddleWare = require("../middleware/auth.middleware");
 
 const sumRouter = express.Router();
 
-sumRouter.post('/sum', myMiddleWare, (req, res) => {
+sumRouter.post('/sum', myMiddleWare, (req, res, next) => {
 
     const value = req.body;
 
     const {a, b} = value;
 
     if(a === undefined || b === undefined){
-        return res.json({error: 'Body is incorrect a or b is missing'});
+        const err = new Error('Missing input');
+        err.status = 400;
+        next(err);
+
+        return;
     }
 
     const sum = Number(a) + Number(b);
 
-    res.json({sum}); // Sending JSON response with the sum to the client
+    if(isNaN(sum)){
+        const err = new Error('Invalid input');
+        err.status = 400;
+        next(err);
+        return;
+    }
+
+     res.status(200).json({sum}); // Sending JSON response with the sum to the client
 })
 
 
