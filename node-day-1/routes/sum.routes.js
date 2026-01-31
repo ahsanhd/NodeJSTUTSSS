@@ -14,7 +14,6 @@ sumRouter.post('/sum', myMiddleWare, (req, res, next) => {
         const err = new Error('Missing input');
         err.status = 400;
         next(err);
-
         return;
     }
 
