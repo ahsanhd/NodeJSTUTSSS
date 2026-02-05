@@ -1,0 +1,4 @@
+26-02-05	19:30:09	Log event Happened
+26-02-05	19:30:18	Log event Happened
+26-02-05	19:30:56	Log event Happened for user 7e5c95c7-098a-4809-80ec-008a108ecb72
+26-02-05	19:32:57	Log event Happened for user 6fbb1eb8-957a-4841-bd98-abe25ced9340
