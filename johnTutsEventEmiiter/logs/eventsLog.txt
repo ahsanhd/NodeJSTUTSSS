@@ -2,3 +2,8 @@
 26-02-05	19:30:18	Log event Happened
 26-02-05	19:30:56	Log event Happened for user 7e5c95c7-098a-4809-80ec-008a108ecb72
 26-02-05	19:32:57	Log event Happened for user 6fbb1eb8-957a-4841-bd98-abe25ced9340
+26-02-07	00:21:46	Log event Happened for user 3c4569a5-317f-452a-82a0-d17a990c6db2
+26-02-07	00:22:29	Log event Happened for user 652abd50-fcb5-46a7-b7a7-7ac4400ee0fa
+26-02-07	00:23:00	Log event Happened for user 8cae71c4-9d1a-4d97-aafe-9c1aae3f4348
+26-02-07	00:23:52	Log event Happened for user 07cf1c9d-dc2a-4922-93e8-44816b3671bb
+26-02-07	00:24:06	Log event Happened for user 8109a036-629d-44cb-9472-090342941fe7
