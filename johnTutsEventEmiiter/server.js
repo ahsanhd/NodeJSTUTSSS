@@ -46,7 +46,6 @@ app.get("/newpage", (req, res) => {
 app.get("oldpage", (req, res) => {
   res.statusCode(301).redirect("/newpage");
 });
-
 app.use((req, res) => {
   res.status(404);
   if (req.accepts("html")) {
