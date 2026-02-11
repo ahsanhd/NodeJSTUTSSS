@@ -20,6 +20,7 @@ const corsOptions = {
   options: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
+      console.log("for will");
     } else {
       callback(new Error("Not allowed by CORS "));
     }
@@ -46,6 +47,7 @@ app.get("/newpage", (req, res) => {
 app.get("oldpage", (req, res) => {
   res.statusCode(301).redirect("/newpage");
 });
+
 app.use((req, res) => {
   res.status(404);
   if (req.accepts("html")) {
