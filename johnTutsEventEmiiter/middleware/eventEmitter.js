@@ -8,6 +8,7 @@ const myEventLogger = async (message, fileName) => {
   const date = fns.format(new Date(), "yy-MM-dd\tHH:mm:ss");
   const logMessage = `${date}\t${message} for user ${uuid.v4()}\n`;
 
+  console.log(logMessage);
   try {
     if (!fs.existsSync(path.join(__dirname, "..", fileName))) {
       await fsPromises.mkdir(path.join(__dirname, "..", fileName));
