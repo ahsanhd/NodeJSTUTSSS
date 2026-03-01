@@ -34,22 +34,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "/public")));
-app.use("/subdir", express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/subdir", express.static(path.join(__dirname, "public")));
 
 app.use("/subdir", require("./routes/subdir"));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "index.html"));
-});
-
-app.get("/newpage", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "new-page.html"));
-});
-
-app.get("oldpage", (req, res) => {
-  res.statusCode(301).redirect("/newpage");
-});
+app.use("/", require("./routes/index"));
 
 app.use((req, res) => {
   res.status(404);
